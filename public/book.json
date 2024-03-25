@@ -1,0 +1,98 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "image": "../public/Images/book1.jpg",
+        "review": "A timeless classic depicting the decadence and disillusionment of the Jazz Age.",
+        "totalPages": 180,
+        "rating": 4.5,
+        "category": "Fiction",
+        "tags": [
+            "Classic",
+            "Romance"
+        ],
+        "publisher": "Charles Scribner's Sons",
+        "yearOfPublishing": 1925
+    },
+    {
+        "bookId": 2,
+        "bookName": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "image": "../public/Images/book2.jpg",
+        "review": "A poignant exploration of racial injustice and moral growth in the American South.",
+        "totalPages": 324,
+        "rating": 4.8,
+        "category": "Fiction",
+        "tags": [
+            "Coming-of-age",
+            "Legal drama"
+        ],
+        "publisher": "J.B. Lippincott & Co.",
+        "yearOfPublishing": 1960
+    },
+    {
+        "bookId": 3,
+        "bookName": "1984",
+        "author": "George Orwell",
+        "image": "../public/Images/book3.jpg",
+        "review": "A chilling portrayal of a dystopian society ruled by totalitarianism.",
+        "totalPages": 328,
+        "rating": 4.6,
+        "category": "Fiction",
+        "tags": [
+            "Dystopian",
+            "Political"
+        ],
+        "publisher": "Secker & Warburg",
+        "yearOfPublishing": 1949
+    },
+    {
+        "bookId": 4,
+        "bookName": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "image": "../public/Images/book4.jpg",
+        "review": "An introspective journey of a teenage boy grappling with alienation and identity.",
+        "totalPages": 224,
+        "rating": 4.4,
+        "category": "Fiction",
+        "tags": [
+            "Coming-of-age",
+            "Existential"
+        ],
+        "publisher": "Little, Brown and Company",
+        "yearOfPublishing": 1951
+    },
+    {
+        "bookId": 5,
+        "bookName": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "image": "../public/Images/book5.jpg",
+        "review": "A delightful romantic comedy that explores themes of love, class, and societal expectations.",
+        "totalPages": 432,
+        "rating": 4.7,
+        "category": "Fiction",
+        "tags": [
+            "Romance",
+            "Satire"
+        ],
+        "publisher": "T. Egerton, Whitehall",
+        "yearOfPublishing": 1813
+    },
+    {
+        "bookId": 6,
+        "bookName": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "image": "../public/Images/book6.jpg",
+        "review": "An epic fantasy adventure set in a meticulously crafted world with themes of friendship, courage, and sacrifice.",
+        "totalPages": 1178,
+        "rating": 4.9,
+        "category": "Fantasy",
+        "tags": [
+            "High fantasy",
+            "Adventure"
+        ],
+        "publisher": "George Allen & Unwin",
+        "yearOfPublishing": 1954
+    }
+]
