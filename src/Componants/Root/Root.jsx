@@ -6,9 +6,14 @@ import Footer from "../Footer/Footer";
 const Root = () => {
     return (
         <div>
-            <Header></Header>
-            <Outlet></Outlet>
-            <Footer></Footer>
+            <div className="max-w-[1300px] mx-auto p-6">
+                <Header></Header>
+                <Outlet></Outlet>
+
+            </div>
+            <div >
+                <Footer></Footer>
+            </div>
         </div>
     );
 };
