@@ -13,12 +13,12 @@ const BookDetails = () => {
     const { review, image, bookName, author, category, totalPages, rating, publisher, yearOfPublishing } = book;
 
     const handleReadBook = () => {
-        toast("Book Added to the read list!");
+        toast.success("Book Added to the read list!");
         saveDataInToLocalStorage(book);
     };
 
     const handleBookWishlist = () => {
-        toast("Book Added to the Wish list!");
+        toast.success("Book Added to the Wish list!");
         saveWishListData(book);
 
     };
