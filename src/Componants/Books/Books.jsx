@@ -15,7 +15,7 @@ const Books = () => {
     return (
         <section className="my-12">
             <div >
-                <h2 className="text-center text-5xl font-semibold">Books</h2>
+                <h2 className="text-center text-5xl font-semibold mb-8">Books</h2>
             </div>
             <div className="grid grid-cols-3 gap-4">
                 {

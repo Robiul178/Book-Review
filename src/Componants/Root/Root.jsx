@@ -6,14 +6,11 @@ import Footer from "../Footer/Footer";
 const Root = () => {
     return (
         <div>
-            <div className="max-w-[1300px] mx-auto p-6">
+            <div className="max-w-[1300px] mx-auto">
                 <Header></Header>
                 <Outlet></Outlet>
-
             </div>
-            <div >
-                <Footer></Footer>
-            </div>
+            <Footer></Footer>
         </div>
     );
 };

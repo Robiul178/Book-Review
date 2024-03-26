@@ -1,4 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveDataInToLocalStorage } from "../../utility/localStorage";
 
 
 const BookDetails = () => {
@@ -6,19 +9,30 @@ const BookDetails = () => {
     const { id } = useParams();
     const intId = parseInt(id);
 
-    const book = loadedBook.find(book => book.bookId === intId)
-
+    const book = loadedBook.find(book => book.bookId === intId);
     const { review, image, bookName, author, category, totalPages, rating, publisher, yearOfPublishing } = book;
 
+    const handleReadBook = () => {
+        toast("Book Read Complete!");
+        saveDataInToLocalStorage(book);
+    };
+
+    const handleBookWishlist = () => {
+        toast(" Added Book Wishlist Complete!");
+        saveDataInToLocalStorage(book);
+    };
+
     return (
-        <section className="flex gap-10">
-            <div>
+        <section className="flex gap-10 my-6">
+
+            <ToastContainer stacked ></ToastContainer>
+            <div className="">
                 <img
                     width={425}
                     height={565}
                     src={image} alt="" />
             </div>
-            <div>
+            <div className="max-w-[800px]">
                 <h2 className="text-4xl font-bold pb-4">{bookName}</h2>
                 <p className="border-b-2 pb-3">By : {author}</p>
                 <p className="border-b-2 pb-3"> {category}</p>
@@ -38,9 +52,7 @@ const BookDetails = () => {
                         }
                     </div>
                 </div>
-
-
-                <div className="flex gap-8 pt-4">
+                <div className="flex gap-8 py-4">
                     <div>
                         <p className="pb-2">Number of Pages :</p>
                         <p className="pb-2">Publisher :</p>
@@ -53,6 +65,10 @@ const BookDetails = () => {
                         <p className="pb-2">{yearOfPublishing}</p>
                         <p className="pb-2">{rating}</p>
                     </div>
+                </div>
+                <div className="border-t-2 pt-4">
+                    <button onClick={handleReadBook} className="btn btn-outline me-4">Read</button>
+                    <button onClick={handleBookWishlist} className="btn btn-info btn-primary">Wishlist</button>
                 </div>
             </div>
         </section>
