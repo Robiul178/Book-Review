@@ -17,6 +17,9 @@ const Books = () => {
             <div >
                 <h2 className="text-center text-5xl font-semibold mb-8">Books</h2>
             </div>
+            <div>
+
+            </div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 pt-16">
                 {
                     books.map(book => <ShowBooks

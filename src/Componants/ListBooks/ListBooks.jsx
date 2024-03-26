@@ -2,7 +2,7 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
-
+import { IoIosArrowDown } from "react-icons/io";
 import { useEffect } from "react";
 import { useState } from "react";
 // import ListBookCard from "./listBookCard/ListBookCard";
@@ -11,16 +11,10 @@ import Wishlist from './Wishlist/Wishlist';
 
 const ListBooks = () => {
 
-    // const [localStorageBook, setLocalStorageBook] = useState([]);
     const [readBookList, setReadBookList] = useState([]);
     const [wishBookList, setWishBookList] = useState([]);
 
-    // useEffect(() => {
-    //     const getBook = JSON.parse(localStorage.getItem("books")) || [];
-    //     setLocalStorageBook(getBook);
 
-
-    // }, []);
     useEffect(() => {
         const readBookList = JSON.parse(localStorage.getItem("books")) || [];
         setReadBookList(readBookList);
@@ -38,6 +32,20 @@ const ListBooks = () => {
 
     return (
         <div className="md:p-8">
+            <div className='min-h-[100px] w-full bg-slate-300 rounded-xl my-4'>
+                <h2 className='text-center pt-6 text-3xl font-bold'>Books</h2>
+            </div>
+            <div className='text-center'>
+                <div className="dropdown dropdown-bottom ">
+                    <div tabIndex={0} role="button" className="btn m-1 bg-green-600 text-white">Sort By <span>
+                        <IoIosArrowDown className='text-2xl' /></span> </div>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>Rating</a></li>
+                        <li><a>Number of Page</a></li>
+                        <li><a>Publisher Year</a></li>
+                    </ul>
+                </div>
+            </div>
             <div className="py-4">
                 <Tabs>
                     <TabList>
