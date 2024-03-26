@@ -1,7 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { saveDataInToLocalStorage } from "../../utility/localStorage";
+import { saveDataInToLocalStorage, saveWishListData } from "../../utility/localStorage";
 
 
 const BookDetails = () => {
@@ -13,13 +13,14 @@ const BookDetails = () => {
     const { review, image, bookName, author, category, totalPages, rating, publisher, yearOfPublishing } = book;
 
     const handleReadBook = () => {
-        toast("Book Read Complete!");
+        toast("Book Added to the read list!");
         saveDataInToLocalStorage(book);
     };
 
     const handleBookWishlist = () => {
-        toast(" Added Book Wishlist Complete!");
-        saveDataInToLocalStorage(book);
+        toast("Book Added to the Wish list!");
+        saveWishListData(book);
+
     };
 
     return (
@@ -54,16 +55,16 @@ const BookDetails = () => {
                 </div>
                 <div className="flex gap-8 py-4">
                     <div>
-                        <p className="pb-2">Number of Pages :</p>
-                        <p className="pb-2">Publisher :</p>
-                        <p className="pb-2">Year of Publishing :</p>
-                        <p className="pb-2">Rating :</p>
+                        <p className="pb-2">Number of Pages </p>
+                        <p className="pb-2">Publisher </p>
+                        <p className="pb-2">Year of Publishing </p>
+                        <p className="pb-2">Rating </p>
                     </div>
                     <div className="font-bold">
-                        <p className="pb-2">{totalPages}</p>
-                        <p className="pb-2">{publisher}</p>
-                        <p className="pb-2">{yearOfPublishing}</p>
-                        <p className="pb-2">{rating}</p>
+                        <p className="pb-2">: {totalPages}</p>
+                        <p className="pb-2">: {publisher}</p>
+                        <p className="pb-2">: {yearOfPublishing}</p>
+                        <p className="pb-2">: {rating}</p>
                     </div>
                 </div>
                 <div className="border-t-2 pt-4">
