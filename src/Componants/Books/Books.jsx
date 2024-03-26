@@ -13,11 +13,11 @@ const Books = () => {
 
 
     return (
-        <section className="my-12">
+        <section className="pt-72 pb-10">
             <div >
                 <h2 className="text-center text-5xl font-semibold mb-8">Books</h2>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 pt-16">
                 {
                     books.map(book => <ShowBooks
                         key={book.id}

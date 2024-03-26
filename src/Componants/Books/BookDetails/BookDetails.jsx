@@ -23,7 +23,7 @@ const BookDetails = () => {
     };
 
     return (
-        <section className="flex gap-10 my-6">
+        <section className="lg:flex p-4 gap-10 my-6">
 
             <ToastContainer stacked ></ToastContainer>
             <div className="">
