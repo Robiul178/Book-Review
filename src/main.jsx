@@ -1,20 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-// import App from './App.jsx'
 import './index.css'
-
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import Root from './Componants/Root/Root';
-
 import Home from './Componants/Home/Home';
 import ListBooks from './Componants/ListBooks/ListBooks';
 import PageToRead from './Componants/PageToRead/PageToRead';
 import Blogs from './Componants/Blogs/Blogs';
+import Read from './Componants/ListBooks/Read/Read';
 import BookDetails from '../src/Componants/Books/BookDetails/BookDetails';
-import ReadBook from './Componants/ListBooks/ReadBook/ReadBook';
+import Wishlist from './Componants/ListBooks/Wishlist/Wishlist';
 
 
 const router = createBrowserRouter([
@@ -45,7 +43,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/read',
-        element: <ReadBook></ReadBook>
+        element: <Read></Read>
+      },
+      {
+        path: '/wishlist',
+        element: <Wishlist></Wishlist>
       }
     ]
   },
