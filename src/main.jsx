@@ -13,6 +13,7 @@ import Home from './Componants/Home/Home';
 import ListBooks from './Componants/ListBooks/ListBooks';
 import PageToRead from './Componants/PageToRead/PageToRead';
 import Blogs from './Componants/Blogs/Blogs';
+import BookDetails from '../src/Componants/Books/BookDetails/BookDetails';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
       {
         path: '/blogs',
         element: <Blogs></Blogs>
+      },
+      {
+        path: '/details/:id',
+        element: <BookDetails></BookDetails>,
+        loader: () => fetch('../public/book.json')
       }
     ]
   },
