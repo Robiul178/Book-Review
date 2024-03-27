@@ -8,11 +8,11 @@ const BarChart = () => {
     const [readBookList, setReadBookList] = useState([null]);
 
     useEffect(() => {
-        const readBookList = JSON.parse(localStorage.getItem("books"));
+        const readBookList = JSON.parse(localStorage.getItem("books")) || [];
         setReadBookList(readBookList);
 
     }, [])
-    console.log(readBookList)
+    // console.log(readBookList)
 
 
     const TriangleBar = (props) => {

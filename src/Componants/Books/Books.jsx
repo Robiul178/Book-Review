@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ShowBooks from "./ShowBooks/ShowBooks";
 
 const Books = () => {
@@ -10,21 +9,18 @@ const Books = () => {
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])
-
+    console.log(books, 'frombook')
 
     return (
-        <section className="pt-72 pb-10">
-            <div >
-                <h2 className="text-center text-5xl font-semibold mb-8">Books</h2>
-            </div>
+        <section className="pt-24 pb-10">
             <div>
-
+                <h2 className="text-4xl text-center font-bold">Book List</h2>
             </div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 pt-16">
                 {
-                    books.map(book => <ShowBooks
-                        key={book.bookId}
-                        book={book}
+                    books.map(b => <ShowBooks
+                        key={b.bookId}
+                        b={b}
                     ></ShowBooks>)
                 }
             </div>

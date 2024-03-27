@@ -1,14 +1,15 @@
 
-import { useState } from "react";
+// import { useState } from "react";
 import { MdOutlineStarRate } from "react-icons/md";
 import { Link } from "react-router-dom";
-import propTypes from 'prop-types';
+// import propTypes from 'prop-types';
 
 
-const ShowBooks = ({ book }) => {
-    const [tags, setTags] = useState(book.tags);
-    const { bookId, image, bookName, author, category, rating } = book;
-    setTags();
+const ShowBooks = ({ b }) => {
+    // const [tags, setTags] = useState(b.tags);
+    const { bookId, image, bookName, author, category, rating, tags } = b;
+    // setTags();
+    // console.log(b.author, 'b')
 
 
     return (
@@ -22,14 +23,16 @@ const ShowBooks = ({ book }) => {
                     </figure>
                     <div className="card-body">
                         <div className="flex gap-4">
-                            {
-                                tags.map((tag, i) =>
-                                    <button
-                                        key={i}
-                                        className="btn text-green-500 font-semibold"
-                                    >{tag}</button>
-                                )
-                            }
+                            <div className="flex gap-4">
+                                {
+                                    tags.map((tag, i) =>
+                                        <button
+                                            key={i}
+                                            className="btn text-green-500 font-semibold"
+                                        >{tag}</button>
+                                    )
+                                }
+                            </div>
                         </div>
                         <h2 className="text-2xl font-semibold">{bookName}</h2>
                         <p className="border-b-2 border-dashed pb-4">By : <span className="ps-2">{author}</span> </p>
@@ -49,9 +52,10 @@ const ShowBooks = ({ book }) => {
     );
 };
 
-ShowBooks.propTypes = {
-    book: propTypes.func
-}
+// ShowBooks.propTypes = {
+//     book: propTypes.array,
+//     tags: propTypes.array
+// }
 
 
 export default ShowBooks;

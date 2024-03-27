@@ -8,19 +8,8 @@ const AboutUs = () => {
 
     return (
         <section>
-            <div>
-
-                <div className="text-center py-8">
-                    <h2 className="text-6xl font-bold ">THE TOP WRITERS OF 2023</h2>
-                    <p className="text-xl py-6">
-                        The Top Authors Books are available and are presented in the Book Guide and in Books Library where every user can purchase the books easily. <br />
-                        The top writers and authors books are also published here. Dont miss the change of getting those precious books from here.
-                    </p>
-                </div>
-            </div>
-            <div className="py-20 text-center">
-                <div className="stats shadow">
-
+            <div className="py-20 text-center border rounded-xl">
+                <div className="stats shadow ">
                     <div className="stat">
                         <div className="stat-figure text-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
@@ -58,6 +47,16 @@ const AboutUs = () => {
 
                 </div>
             </div>
+            <div>
+                <div className="text-center py-8">
+                    <h2 className="text-6xl font-bold ">THE TOP WRITERS OF 2023</h2>
+                    <p className="text-xl py-6">
+                        The Top Authors Books are available and are presented in the Book Guide and in Books Library where every user can purchase the books easily. <br />
+                        The top writers and authors books are also published here. Dont miss the change of getting those precious books from here.
+                    </p>
+                </div>
+            </div>
+
             <div className="grid grid-cols-3 gap-6 py-8">
                 {
                     writers.map(writer => <WriterCard
