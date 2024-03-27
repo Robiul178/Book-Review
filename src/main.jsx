@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/pageToRead',
-        element: <PageToRead></PageToRead>
+        element: <PageToRead></PageToRead>,
       },
       {
         path: '/blogs',

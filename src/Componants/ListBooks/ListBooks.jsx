@@ -27,9 +27,6 @@ const ListBooks = () => {
     }, [])
 
 
-    console.log('readBookList', readBookList)
-    console.log('wishBookList', wishBookList)
-
     return (
         <div className="md:p-8">
             <div className='min-h-[100px] w-full bg-slate-300 rounded-xl my-4'>
@@ -56,7 +53,7 @@ const ListBooks = () => {
                         </Tab>
                         <Tab to='/wisthlist'>
                             <div>
-                                <h2>wish</h2>
+                                <h2>Wish List</h2>
                             </div>
                         </Tab>
                     </TabList>
@@ -81,14 +78,7 @@ const ListBooks = () => {
                     </TabPanel>
                 </Tabs>
             </div>
-            {/* <div>
-                {
-                    localStorageBook.map(book => <ListBookCard
-                        key={book.bookId}
-                        book={book}
-                    ></ListBookCard>)
-                }
-            </div> */}
+
         </div>
     );
 };

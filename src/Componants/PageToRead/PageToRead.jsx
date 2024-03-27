@@ -1,10 +1,26 @@
-// import React from 'react';
+
+import { useEffect, useState } from "react";
+import BarChart from "./BarChart/BarChart"
 
 const PageToRead = () => {
+    const [books, setBooks] = useState([]);
+
+    useEffect(() => {
+        fetch('book.json')
+            .then(res => res.json())
+            .then(data => setBooks(data))
+    }, []);
+
+    console.log(books)
     return (
         <div>
-            <h2>PageToRead</h2>
-        </div>
+            {
+                books.map(book => <BarChart
+                    key={book.bookId}
+                    book={book}
+                ></BarChart>)
+            }
+        </div >
     );
 };
 
