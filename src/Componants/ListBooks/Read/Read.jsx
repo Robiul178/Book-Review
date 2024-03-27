@@ -14,7 +14,7 @@ const Read = ({ readBook }) => {
         yearOfPublishing,
         rating } = readBook;
 
-
+    console.log(readBook)
     return (
         <div className="mb-6">
             <div className="card card-side border-2 p-6">

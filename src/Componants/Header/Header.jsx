@@ -8,7 +8,7 @@ const Header = () => {
         <li><NavLink
             to="/"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
+                isPending ? "pending" : isActive ? "border-2 border-green-600 bg-transparent" : ""
             }
         >
             Home
@@ -16,7 +16,7 @@ const Header = () => {
         <li><NavLink
             to="/listbooks"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
+                isPending ? "pending" : isActive ? "border-2 border-green-600 bg-transparent" : ""
             }
         >
             List Books
@@ -25,7 +25,7 @@ const Header = () => {
         <li><NavLink
             to="/pageToRead"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
+                isPending ? "pending" : isActive ? "border-2 border-green-600 bg-transparent" : ""
             }
         >
             Page To Read
@@ -33,7 +33,7 @@ const Header = () => {
         <li><NavLink
             to="/blogs"
             className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
+                isPending ? "pending" : isActive ? "border-2 border-green-600 bg-transparent" : ""
             }
         >
             Blogs
@@ -57,7 +57,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 text-xl">
+                <ul id="nav-menu" className="menu menu-horizontal px-1 text-xl">
                     {links}
                 </ul>
             </div>
