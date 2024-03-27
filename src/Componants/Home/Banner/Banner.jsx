@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import bannerImg from "/public/img/bookCover.png"
 
 const Banner = () => {
     return (
@@ -8,7 +9,7 @@ const Banner = () => {
                     <img
                         className="-skew-y-12"
                         width={500}
-                        src="../../../../public/bookCover.png"
+                        src={bannerImg}
                     />
 
                     <div>

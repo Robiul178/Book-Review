@@ -1,16 +1,16 @@
+
 import { useState } from "react";
 import { MdOutlineStarRate } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 
 const ShowBooks = ({ book }) => {
-
     const [tags, setTags] = useState(book.tags);
-
     const { bookId, image, bookName, author, category, rating } = book;
 
+
     return (
-        <section>
+        <section >
             <Link to={`/details/${bookId}`}>
                 <div className="card  bg-base-100 border-2 p-4">
                     <figure className="px-10 pt-10 bg-base-200 rounded-xl">
@@ -21,9 +21,9 @@ const ShowBooks = ({ book }) => {
                     <div className="card-body">
                         <div className="flex gap-4">
                             {
-                                tags.map((tag) =>
+                                tags.map((tag, i) =>
                                     <button
-                                        key={tag.id}
+                                        key={i}
                                         className="btn text-green-500 font-semibold"
                                     >{tag}</button>
                                 )
@@ -41,7 +41,8 @@ const ShowBooks = ({ book }) => {
                             </div>
                         </div>
                     </div>
-                </div></Link>
+                </div>
+            </Link>
         </section>
     );
 };

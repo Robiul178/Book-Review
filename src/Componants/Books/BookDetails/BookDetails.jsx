@@ -43,9 +43,9 @@ const BookDetails = () => {
                     <p className="font-bold mt-2">Tag</p>
                     <div className="text-[#23BE0A] flex gap-4">
                         {
-                            book.tags.map((tag) =>
+                            book.tags.map((tag, i) =>
                                 <div
-                                    key={tag.id}
+                                    key={i}
                                     className="bg-base-200 p-2 rounded-3xl  font-semibold"
                                 >#{tag}</div>
                             )
