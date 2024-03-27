@@ -31,6 +31,14 @@ const Header = () => {
             Page To Read
         </NavLink></li>
         <li><NavLink
+            to="/about"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "border-2 border-green-600 bg-transparent" : ""
+            }
+        >
+            About Us
+        </NavLink></li>
+        <li><NavLink
             to="/blogs"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "border-2 border-green-600 bg-transparent" : ""
