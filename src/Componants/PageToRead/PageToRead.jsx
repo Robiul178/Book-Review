@@ -3,24 +3,20 @@ import { useEffect, useState } from "react";
 import BarChart from "./BarChart/BarChart"
 
 const PageToRead = () => {
-    const [books, setBooks] = useState([]);
+
+    const [readBookList, setReadBookList] = useState([]);
 
     useEffect(() => {
-        fetch('book.json')
-            .then(res => res.json())
-            .then(data => setBooks(data))
-    }, []);
+        const readBookList = JSON.parse(localStorage.getItem("books"));
+        setReadBookList(readBookList);
 
-    console.log(books)
+    }, [])
+
+    console.log(readBookList)
     return (
-        <div>
-            {
-                books.map(book => <BarChart
-                    key={book.bookId}
-                    book={book}
-                ></BarChart>)
-            }
-        </div >
+        <div className="py-44">
+            <BarChart></BarChart>
+        </div>
     );
 };
 

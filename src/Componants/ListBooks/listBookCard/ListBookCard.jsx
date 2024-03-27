@@ -2,6 +2,8 @@ import { MdOutlineDateRange } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
 
+import propTypes from 'prop-types';
+
 const ListBookCard = ({ book }) => {
 
     const {
@@ -74,5 +76,9 @@ const ListBookCard = ({ book }) => {
         </div>
     );
 };
+
+ListBookCard.propTypes = {
+    book: propTypes.func
+}
 
 export default ListBookCard;

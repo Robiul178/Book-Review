@@ -1,6 +1,8 @@
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
+import propTypes from "prop-types";
+
 
 const Wishlist = ({ wishList }) => {
     const {
@@ -74,4 +76,7 @@ const Wishlist = ({ wishList }) => {
     );
 };
 
+Wishlist.propTypes = {
+    wishList: propTypes.func
+}
 export default Wishlist;

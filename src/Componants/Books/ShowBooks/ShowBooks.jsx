@@ -2,11 +2,13 @@
 import { useState } from "react";
 import { MdOutlineStarRate } from "react-icons/md";
 import { Link } from "react-router-dom";
+import propTypes from 'prop-types';
 
 
 const ShowBooks = ({ book }) => {
     const [tags, setTags] = useState(book.tags);
     const { bookId, image, bookName, author, category, rating } = book;
+    setTags();
 
 
     return (
@@ -46,5 +48,10 @@ const ShowBooks = ({ book }) => {
         </section>
     );
 };
+
+ShowBooks.propTypes = {
+    book: propTypes.func
+}
+
 
 export default ShowBooks;

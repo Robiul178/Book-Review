@@ -1,6 +1,7 @@
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
+import propTypes from "prop-types";
 
 const Read = ({ readBook }) => {
     const {
@@ -14,7 +15,7 @@ const Read = ({ readBook }) => {
         yearOfPublishing,
         rating } = readBook;
 
-    console.log(readBook)
+    // console.log(typeof (readBook), readBook);
     return (
         <div className="mb-6">
             <div className="card card-side border-2 p-6">
@@ -73,5 +74,10 @@ const Read = ({ readBook }) => {
         </div>
     );
 };
+
+Read.propTypes = {
+    readBook: propTypes.func
+}
+
 
 export default Read;
