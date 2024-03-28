@@ -20,7 +20,7 @@ const Read = ({ readBook }) => {
     // console.log(readBook);
     return (
         <div className="mb-6">
-            <div className="card card-side border-2 p-6">
+            <div className="card lg:card-side border-2 p-6">
                 <figure className="bg-base-300 p-6 rounded">
                     <img
                         className="w-[200px] h-[250px]"
