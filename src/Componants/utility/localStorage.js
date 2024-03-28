@@ -1,7 +1,3 @@
-
-
-
-
 import { toast } from "react-toastify";
 
 export const saveDataInToLocalStorage = (book) => {

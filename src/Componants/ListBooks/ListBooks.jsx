@@ -9,7 +9,7 @@ import Wishlist from './Wishlist/Wishlist';
 
 const ListBooks = () => {
 
-    const [readBookList, setReadBookList] = useState([]);
+    // const [readBookList, setReadBookList] = useState([]);
     const [wishBookList, setWishBookList] = useState([]);
 
     const [displayRead, setDisplayread] = useState([]);
@@ -17,7 +17,7 @@ const ListBooks = () => {
 
     useEffect(() => {
         const readBookList = JSON.parse(localStorage.getItem("books")) || [];
-        setReadBookList(readBookList);
+        // setReadBookList(readBookList);
         setDisplayread(readBookList);
 
     }, [])
@@ -30,9 +30,9 @@ const ListBooks = () => {
 
     const sortDataByRating = filter => {
 
-        const data = displayRead;
+        const data = [...displayRead];
 
-        if (filter == 'rating') {
+        if (filter === 'rating') {
             data.sort((x, y) => {
                 return y.rating - x.rating;
             });
@@ -57,7 +57,7 @@ const ListBooks = () => {
         }
 
         // setDisplayread(data)
-        console.log(displayRead)
+        console.log(data)
 
     }
 
