@@ -2,9 +2,11 @@ import { MdOutlineDateRange } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { FiFileText } from "react-icons/fi";
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Read = ({ readBook }) => {
     const {
+        bookId,
         image,
         bookName,
         author,
@@ -66,7 +68,9 @@ const Read = ({ readBook }) => {
                             <h2 className="bg-green-100 p-3 rounded-3xl text-green-500">Rating : {rating}</h2>
                         </div>
                         <div>
-                            <button className="btn bg-green-400 text-white">View Details</button>
+                            <Link to={`/details/${bookId}`}>
+                                <button className="btn bg-green-400 text-white">View Details</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
