@@ -9,7 +9,7 @@ const Books = () => {
             .then(res => res.json())
             .then(data => setBooks(data))
     }, [])
-    console.log(books, 'frombook')
+    // console.log(books, 'frombook')
 
     return (
         <section className="pt-24 pb-10">

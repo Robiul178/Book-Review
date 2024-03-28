@@ -1,7 +1,6 @@
 
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-
 import { IoIosArrowDown } from "react-icons/io";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -12,29 +11,55 @@ const ListBooks = () => {
 
     const [readBookList, setReadBookList] = useState([]);
     const [wishBookList, setWishBookList] = useState([]);
-    const [all, setAll] = useState([]);
+
+    const [displayRead, setDisplayread] = useState([]);
+
 
     useEffect(() => {
         const readBookList = JSON.parse(localStorage.getItem("books")) || [];
         setReadBookList(readBookList);
+        setDisplayread(readBookList);
 
     }, [])
+
     useEffect(() => {
         const wishBookList = JSON.parse(localStorage.getItem("wishlist")) || [];
         setWishBookList(wishBookList);
     }, [])
 
-    const handleAllData = () => {
-        let array = [];
 
-        let object1 = readBookList;
-        let object2 = wishBookList;
+    const sortDataByRating = filter => {
 
-        array = [...array, object1, object2];
+        const data = displayRead;
 
-        setAll(array)
+        if (filter == 'rating') {
+            data.sort((x, y) => {
+                return y.rating - x.rating;
+            });
+            setDisplayread(data);
+            console.table(data)
+            console.log(data)
+        }
+        else if (filter === 'totalPages') {
+            data.sort((x, y) => {
+                return x.totalPages - y.totalPages;
+            });
+            setDisplayread(data);
+            console.table(data)
+            console.log(data)
+        } else if (filter === 'yearOfPublishing') {
+            data.sort((x, y) => {
+                return x.yearOfPublishing - y.yearOfPublishing;
+            });
+            setDisplayread(data);
+            console.table(data)
+            console.log(data)
+        }
+
+        // setDisplayread(data)
+        console.log(displayRead)
+
     }
-    console.log("all from", all)
 
     return (
         <div className="md:p-8">
@@ -46,21 +71,21 @@ const ListBooks = () => {
                     <div tabIndex={0} role="button" className="btn m-1 bg-green-600 text-white">Sort By <span>
                         <IoIosArrowDown className='text-2xl' /></span> </div>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <li onClick={() => handleAllData()}><a>All</a></li>
-                        <li><a>Number of Page</a></li>
-                        <li><a>Publisher Year</a></li>
+                        <li onClick={() => sortDataByRating('rating')}><a>Rating</a></li>
+                        <li onClick={() => sortDataByRating('totalPages')}><a>Number of Page</a></li>
+                        <li onClick={() => sortDataByRating('yearOfPublishing')}><a>Publisher Year</a></li>
                     </ul>
                 </div>
             </div>
             <div className="py-4">
                 <Tabs>
                     <TabList>
-                        <Tab to='/read'>
+                        <Tab >
                             <div>
                                 <h2>Read</h2>
                             </div>
                         </Tab>
-                        <Tab to='/wisthlist'>
+                        <Tab >
                             <div>
                                 <h2>Wish List</h2>
                             </div>
@@ -70,7 +95,7 @@ const ListBooks = () => {
                     <TabPanel>
                         <div>
                             {
-                                readBookList.map(readBook => <Read
+                                displayRead.map(readBook => <Read
                                     key={readBook.bookId}
                                     readBook={readBook}
                                 ></Read>)
@@ -87,12 +112,6 @@ const ListBooks = () => {
                     </TabPanel>
                 </Tabs>
             </div>
-            <div>
-                {
-                    all.map(allBook => console.log('fromallbook', allBook))
-                }
-            </div>
-
         </div>
     );
 };
