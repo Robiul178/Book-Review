@@ -1,6 +1,6 @@
 # Book Vibe
 
-- [Website-Live-Link](https://voluble-kulfi-d72d64.netlify.app/)
+- [Website-Live-Link](https://66057a0591af7f15494bf69c--voluble-kulfi-d72d64.netlify.app)
 
 -----
 
