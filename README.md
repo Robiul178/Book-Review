@@ -1,6 +1,6 @@
 # Book Vibe
 
-- [Website-Live-Link]([https://books-vibee.netlify.app/blogs])
+- [Website-Live-Link](https://books-vibee.netlify.app/blogs)
 
 -----
 
